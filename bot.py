@@ -45,8 +45,6 @@ def start_bot():
     updater.idle()
 
 if __name__ == "__main__":
-    # Start Telegram bot in a separate thread
     threading.Thread(target=start_bot, daemon=True).start()
-    # Run Flask app on Render's specified port
     port = int(os.getenv("PORT", 8080))
     app.run(host='0.0.0.0', port=port)
